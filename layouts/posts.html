@@ -2,14 +2,15 @@
 <html>
 <head>
   <title>Social App</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+  <link href="app.css" type="text/css" rel="stylesheet" />
 </head>
 <body data-ng-app="SocialApp">
   <div data-ng-controller="PostsCtrl as postsCtrl" class="container">
   
   <form>
     <div class="input-group">
-      <textarea data-ng-model="postsCtrl.newMsg.body" class="form-control"></textarea>
+      <textarea data-ng-model="postsCtrl.newMsg" class="form-control"></textarea>
       <button data-ng-click="postsCtrl.addPost()" class="btn btn-primary">Add Post</button>
     </div>
   </form>
