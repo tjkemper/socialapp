@@ -3,7 +3,7 @@ var router = require('express').Router();
 
 
 //getAllPosts
-router.get('/api/posts', function(req,res,next){
+router.get('/', function(req,res,next){
 	Post.find()
 		.sort('-date')
 		.exec(function(err, posts){
@@ -15,9 +15,9 @@ router.get('/api/posts', function(req,res,next){
 });
 
 //addPost
-router.post('/api/posts',function(req,res,next){
+router.post('/',function(req,res,next){
 	var post = new Post({
-		username : req.body.username,
+		username : req.auth.username,
 		body 	 : req.body.body
 	});
 
