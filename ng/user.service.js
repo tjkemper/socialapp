@@ -21,4 +21,14 @@ angular.module('SocialApp')
 		});
 	}
 
+	userService.register = function(username, password){
+		return $http({
+			method:'POST',
+			url:'/api/users',
+			data:{username:username, password:password}
+		}).then(function(response){
+			
+		},function(response){});
+	}
+
 });
