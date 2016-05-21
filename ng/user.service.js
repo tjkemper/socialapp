@@ -31,4 +31,8 @@ angular.module('SocialApp')
 		},function(response){});
 	}
 
+	userService.removeJwtToken = function(){
+		$http.defaults.headers.common['X-Auth'] = null;
+	}
+
 });
