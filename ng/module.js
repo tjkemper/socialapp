@@ -1,1 +1,3 @@
-angular.module("SocialApp",[]);
+angular.module("SocialApp",[
+	'ngRoute'
+]);
