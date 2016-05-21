@@ -1,0 +1,15 @@
+<div class="container">
+  <form>
+    <div class="input-group">
+      <textarea data-ng-model="postsCtrl.newMsg" class="form-control"></textarea>
+      <button data-ng-click="postsCtrl.addPost()" class="btn btn-primary">Add Post</button>
+    </div>
+  </form>
+  <h1>Recent Posts</h1>
+  <ul class="list-group">
+    <li data-ng-repeat="post in postsCtrl.posts" class="list-group-item">
+      <strong>@{{post.username}}</strong>
+      <span>{{post.body}}</span>
+    </li>
+  </ul>
+</div>

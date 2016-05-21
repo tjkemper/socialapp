@@ -4,6 +4,7 @@ var router = express.Router();
 
 //Serve static content
 router.use(express.static(__dirname + "/../assets"));
+router.use(express.static(__dirname + '/../templates'))
 
 //serve posts.html
 router.get('/', function(req,res){

@@ -6,23 +6,9 @@
   <link href="app.css" type="text/css" rel="stylesheet" />
 </head>
 <body data-ng-app="SocialApp">
-  <div data-ng-controller="PostsCtrl as postsCtrl" class="container">
   
-  <form>
-    <div class="input-group">
-      <textarea data-ng-model="postsCtrl.newMsg" class="form-control"></textarea>
-      <button data-ng-click="postsCtrl.addPost()" class="btn btn-primary">Add Post</button>
-    </div>
-  </form>
-    <h1>Recent Posts</h1>
-    <ul class="list-group">
-      <li data-ng-repeat="post in postsCtrl.posts" class="list-group-item">
-        <strong>{{post.username}}</strong>
-        <span>{{post.body}}</span>
-      </li>
-    </ul>
-  </div>
-
+  <div data-ng-view></div>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
   <script src="app.js"></script>
