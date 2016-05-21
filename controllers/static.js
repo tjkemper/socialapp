@@ -7,7 +7,7 @@ router.use(express.static(__dirname + "/../assets"));
 
 //serve posts.html
 router.get('/', function(req,res){
-	res.sendFile(path.resolve(__dirname+'/../layouts/posts.html'));
+	res.sendFile(path.resolve(__dirname+'/../layouts/app.html'));
 });
 
 module.exports = router;
