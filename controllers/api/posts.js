@@ -1,5 +1,6 @@
 var Post = require('../../models/post');
 var router = require('express').Router();
+var websockets = require('../../websockets');
 
 
 //getAllPosts
@@ -26,7 +27,7 @@ router.post('/',function(req,res,next){
 		if(err){
 			return next(err);
 		}
-
+		websockets.broadcast('new_post', post);
 		res.status(201).json(post);
 	});
 

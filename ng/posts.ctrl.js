@@ -1,5 +1,5 @@
 angular.module("SocialApp")
-.controller("PostsCtrl", function(PostsService){
+.controller("PostsCtrl", function(PostsService, $scope){
 	var postsData = this;
 	postsData.posts = [];
 
@@ -10,11 +10,17 @@ angular.module("SocialApp")
 	postsData.addPost = function(){
 	  	if(postsData.newMsg){
         	PostsService.create(postsData.newMsg).then(function(response){
-	        	postsData.posts.unshift(response.data);
+	        	//postsData.posts.unshift(response.data);
 	        	postsData.newMsg = null;  
 	        },function(response){});
 
 	    }
 	}
+
+	$scope.$on('ws:new_post', function(_, post){
+		$scope.$apply(function(){
+			postsData.posts.unshift(post);
+		});
+	});
 
 });
