@@ -17,5 +17,8 @@
     "mongoose": "^4.4.17",
     "ws": "^1.1.0",
     "wscat": "^1.0.1"
+  },
+  "devDependencies": {
+    "protractor": "^3.3.0"
   }
 }
