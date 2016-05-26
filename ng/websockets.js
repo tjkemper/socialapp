@@ -19,7 +19,9 @@ angular.module('SocialApp')
 angular.module('SocialApp')
 .run(function ($rootScope, $timeout){
 	(function connect(){
-		var url = 'ws://localhost:3000';
+		//var url = 'ws://localhost:3001';
+		var url = "ws://" + window.location.host;
+
 		var connection = new WebSocket(url);
 
 		connection.onopen = function(){

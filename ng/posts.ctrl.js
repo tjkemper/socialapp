@@ -10,7 +10,6 @@ angular.module("SocialApp")
 	postsData.addPost = function(){
 	  	if(postsData.newMsg){
         	PostsService.create(postsData.newMsg).then(function(response){
-	        	//postsData.posts.unshift(response.data);
 	        	postsData.newMsg = null;  
 	        },function(response){});
 
