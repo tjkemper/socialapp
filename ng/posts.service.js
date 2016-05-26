@@ -14,7 +14,7 @@ angular.module("SocialApp")
 	        		method:'POST',
 	        		url:'/api/posts',
 	        		data:{
-		            	username:'john',
+		            	//username:'john',
 		            	body:post
 	    	      	}
 	        	});
