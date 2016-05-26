@@ -40,7 +40,7 @@ angular.module('SocialApp')
 	}
 
 	userService.removeJwtTokenFromRequests = function(){
-		$http.defaults.headers.common['X-Auth'] = null;
+		$http.defaults.headers.common['X-Auth'] = undefined;
 	}
 
 });
