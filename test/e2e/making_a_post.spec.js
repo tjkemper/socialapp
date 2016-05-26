@@ -23,40 +23,15 @@ describe('making a post', function(){
 		element(by.model('postsCtrl.newMsg')).sendKeys(post);
 		element(by.id('addPostBtn')).click();
 
-		//the user should now see their post as the first post on the page
-		
-		//browser.waitForAngular();
-
-/*
-		element.all(by.css('ul.list-group li')).first().getText().then(function(text){
-			console.log(text);
-		});
-*/
-	
-		//expect(element(by.css('ul.list-group li')).isPresent()).toBeTruthy();
-
-		//browser.pause();
-		//browser.sleep(3000);
-
-/*
-		browser.wait(function(){
-			return element(by.css('ul.list-group li'));
-		}, 3000);
-*/
-
-/*
-//fixme: wait for element to exist first
+		//the user should now see their post as the first post on the page		
 		element.all(by.css('ul.list-group li')).first().getText().then(function(text){
 			//console.log(text);
 			expect(text).to.contain(post);
 		});
-*/
 
-		//browser.pause();
 	});
 
 	afterEach(function(){
-
 		db.connection.db.dropDatabase();
 	});
 });

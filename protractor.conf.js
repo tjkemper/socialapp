@@ -8,6 +8,6 @@ exports.config = {
 	},
 	onPrepare: function(){
 		process.env.PORT = 3001;
-		require('./server')
+		require('./server');
 	}
 }
