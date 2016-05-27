@@ -22,12 +22,18 @@
     "blanket": "^1.2.3",
     "chai": "^3.5.0",
     "chai-as-promised": "^5.3.0",
+    "jshint": "^2.9.2",
     "jsonwebtoken": "^7.0.0",
+    "karma": "^0.13.22",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^1.0.1",
+    "karma-phantomjs-launcher": "^1.0.0",
     "mocha": "^2.5.3",
+    "phantomjs-prebuilt": "^2.1.7",
     "protractor": "^3.3.0",
     "supertest": "^1.2.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha && ./node_modules/.bin/protractor"
+    "test": "jshint --show-non-errors . && ./node_modules/.bin/mocha && ./node_modules/.bin/protractor"
   }
 }
