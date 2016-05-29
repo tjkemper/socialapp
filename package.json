@@ -37,6 +37,8 @@
     "supertest": "^1.2.0"
   },
   "scripts": {
+    "postInstall":"gulp build",
+
     "test": "jshint --show-non-errors . && ./node_modules/.bin/mocha && ./node_modules/.bin/protractor"
   }
 }
