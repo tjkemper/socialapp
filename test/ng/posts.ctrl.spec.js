@@ -12,6 +12,12 @@ describe('posts.ctrl', function(){
 			]);
 			return deferred.promise;
 		}
+
+		mockPostsService.create = function(){
+			var deferred = $q.defer();
+			deferred.resolve();
+			return deferred.promise;
+		}
 	}));
 
 
@@ -23,7 +29,7 @@ describe('posts.ctrl', function(){
 		});
 	}));
 	/*
-		fixme: Karma has a problem with controller as syntax
+		fixme: Issue with controller as syntax
 	*/
 	it('loads posts from the service', function(){
 		console.log($scope.postsCtrl); //posts:[]
@@ -31,4 +37,13 @@ describe('posts.ctrl', function(){
 		console.log($scope.postsCtrl); //posts:undefined
 		//expect($scope.postsCtrl.posts).to.have.length(2);
 	});
+
+	/*
+		fixme: Issue with controller as syntax
+	*/
+	it('sends a new post to the service', function(){
+		$scope.postsCtrl.newMsg = 'my new post!!!';
+		$scope.postsCtrl.addPost();
+	});
+
 });
