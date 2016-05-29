@@ -35,15 +35,15 @@ describe('posts.ctrl', function(){
 		console.log($scope.postsCtrl); //posts:[]
 		$scope.$digest();
 		console.log($scope.postsCtrl); //posts:undefined
-		//expect($scope.postsCtrl.posts).to.have.length(2);
+		expect($scope.postsCtrl.posts).to.have.length(2);
 	});
 
-	/*
-		fixme: Issue with controller as syntax
-	*/
+	
 	it('sends a new post to the service', function(){
+		sinon.spy(mockPostsService, 'create');
 		$scope.postsCtrl.newMsg = 'my new post!!!';
 		$scope.postsCtrl.addPost();
+		expect(mockPostsService.create).to.have.been.calledWith('my new post!!!');
 	});
 
 });
